@@ -10,4 +10,4 @@ const BreadCrums = ({title}) => {
   )
 }
 
-export default BreadCrums
+export default BreadCrums;

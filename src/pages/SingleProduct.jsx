@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Loading from "../assets/Loading4.webm"
-import Breadcrums from '../components/Breadcrums';
+import BreadCrums from '../components/BreadCrums';
 import { IoCartOutline } from 'react-icons/io5';
 import { useCart } from '../context/CartContext';
 
@@ -16,11 +16,10 @@ const SingleProduct = () => {
             const res = await axios.get(`https://fakestoreapi.in/api/products/${params.id}`)
             const product = res.data.product;
             setSingleProduct(product)
-            e.log(product);
+        
 
         } catch (error) {
-            e.log(error);
-
+           alert("Something went wrong. Please try again later.");
         }
     }
 
@@ -34,7 +33,7 @@ const SingleProduct = () => {
         <>
             {
                 SingleProduct ? <div className='px-4 pb-4 md:px-0'>
-                     <Breadcrums title={SingleProduct.title}/>
+                     <BreadCrums title={SingleProduct.title}/>
                      <div className='max-w-6xl mx-auto md:p-6 grid grid-cols-1 md:grid-cols-2 gap-10'>
                         {/* product image */}
                         <div className='w-full'>
