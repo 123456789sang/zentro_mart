@@ -63,18 +63,7 @@ const App = () => {
     localStorage.setItem('cartItem', JSON.stringify(cartItem))
   }, [cartItem]);
 
-  useEffect(() => {
-    async function getUsers() {
-      try {
-        const res = await fetch("/.netlify/functions/getUserData");
-        const data = await res.json();
-        console.log(data);
-      } catch (error) {
-        console.error("Error fetching user data:", error);
-      }
-    }
-    getUsers();
-  }, []);
+
   return (
     <BrowserRouter>
       <Navbar location={location} getLocation={getLocation} openDropdown={openDropdown} setOpenDropdown={setOpenDropdown} />
