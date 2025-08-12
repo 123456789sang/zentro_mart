@@ -20,6 +20,7 @@ const App = () => {
   const [openDropdown, setOpenDropdown] = useState(false)
   const { cartItem, setCartItem } = useCart();
 
+
   const getLocation = async () => {
     navigator.geolocation.getCurrentPosition(async pos => {
       const { latitude, longitude } = pos.coords
